@@ -1,0 +1,13 @@
+.footer-container {
+    position: sticky;  
+    top: 100%;
+    width: 100%;
+    text-align: center;  
+
+}  
+.footer1{
+    background-color: #232F3E;
+}
+.footer2{
+    background-color: #131A22;
+}

@@ -64,7 +64,7 @@ export function MyNav() {
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">SAY Store</Navbar.Brand>
+          <Navbar.Brand href="home">SAY Store</Navbar.Brand>
           <Nav className="ms-auto">
             <NavLink className="nav-link" to="/">
               Home
@@ -96,9 +96,8 @@ export function MyNav() {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <NavLink className="nav-link" to="/login">
-                Login
-              </NavLink>
+              <><NavLink className="nav-link" to="/login">Login</NavLink><NavLink className="nav-link" to="/register">Register</NavLink></>
+              
             )}
           </Nav>
         </Container>

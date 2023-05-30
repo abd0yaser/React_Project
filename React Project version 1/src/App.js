@@ -7,7 +7,8 @@ import { Products } from "./components/Products";
 import { ProductDetails } from "./components/ProductDetails";
 import { ProductForm } from "./components/ProductForm";
 import { NotFound } from "./components/NotFound";
-
+import {MyFooter} from "./components/MyFooter";
+import {MyRegister} from "./components/MyRegister";
 
 
 import { AdminLogin } from './components/AbanopAsaad/Login/AdminLogin';
@@ -18,7 +19,7 @@ import { MainLogin } from './components/AbanopAsaad/Login/MainLogin';
 
 function App() {
 	return (
-		<div>
+		<div className="total">
 			<MyNav />
 			<Routes>
 				<Route path='' element={<Home />} />
@@ -27,6 +28,7 @@ function App() {
 
 
 				<Route path='login' element={<MainLogin />} />
+				<Route path='register' element={<MyRegister/>}/>
 				<Route path='admin-login' element={<AdminLogin />} />
 				<Route path='user-login' element={<UserLogin />} />
 
@@ -43,6 +45,7 @@ function App() {
 
 				<Route path='*' element={<NotFound />} />
 			</Routes>
+			<MyFooter/>
 		</div>
 	);
 }

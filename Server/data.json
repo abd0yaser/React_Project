@@ -63,6 +63,20 @@
       "name": "user2",
       "email": "user2@mail.com",
       "password": "0000000"
+    },
+    {
+      "username": "ahmos",
+      "name": "ahmoss",
+      "email": "a7mos@yahoo.com",
+      "password": "a7mos@a7mos.a7mons.com",
+      "id": 3
+    },
+    {
+      "username": "asdasd",
+      "name": "asdasd",
+      "email": "adad@yahoo.com",
+      "password": "adad@yahoo.com",
+      "id": 4
     }
   ],
   "admin_users": [

@@ -85,7 +85,7 @@ export function MyNav() {
                 </NavDropdown.Item>
 
                 {isAdminLoggedIn && (
-                  <NavDropdown.Item href="http://localhost:3000/products">
+                  <NavDropdown.Item href="http://localhost:3000/admin-dashboard">
                     AdminDashboard
                   </NavDropdown.Item>
                 )}
@@ -96,8 +96,14 @@ export function MyNav() {
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <><NavLink className="nav-link" to="/login">Login</NavLink><NavLink className="nav-link" to="/register">Register</NavLink></>
-              
+              <>
+                <NavLink className="nav-link" to="/login">
+                  Login
+                </NavLink>
+                <NavLink className="nav-link" to="/register">
+                  Register
+                </NavLink>
+              </>
             )}
           </Nav>
         </Container>

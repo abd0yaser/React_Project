@@ -1,0 +1,80 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Samsung",
+      "price": 200,
+      "quantity": 20
+    },
+    {
+      "id": 2,
+      "productName": "Iphone",
+      "price": 100,
+      "quantity": 10
+    },
+    {
+      "productName": "MacBook",
+      "price": "1000",
+      "quantity": "10",
+      "id": 6
+    },
+    {
+      "productName": "Note 9",
+      "price": "9000",
+      "quantity": "9",
+      "id": 7
+    },
+    {
+      "productName": "iphone",
+      "price": "1",
+      "quantity": "1",
+      "id": 8
+    },
+    {
+      "productName": "iphone",
+      "price": "1",
+      "quantity": "1",
+      "id": 9
+    },
+    {
+      "productName": "Note3",
+      "price": "1",
+      "quantity": "1",
+      "id": 10
+    },
+    {
+      "productName": "1q2123",
+      "price": "12",
+      "quantity": "1",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "afsafasf",
+      "email": "abanop_asaad@yhaoo.com",
+      "password": "0000000"
+    },
+    {
+      "id": 2,
+      "name": "user2",
+      "email": "user2@mail.com",
+      "password": "0000000"
+    }
+  ],
+  "admin_users": [
+    {
+      "id": 1,
+      "name": "abanop asaad",
+      "email": "abanop_asaad@yhaoo.com",
+      "password": "0000000"
+    },
+    {
+      "id": 2,
+      "name": "shrif",
+      "email": "shrif@yhaoo.com",
+      "password": "0000000"
+    }
+  ]
+}

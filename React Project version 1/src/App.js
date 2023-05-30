@@ -13,7 +13,7 @@ import { NotFound } from "./components/NotFound";
 import { AdminLogin } from './components/AbanopAsaad/Login/AdminLogin';
 import { UserLogin } from './components/AbanopAsaad/Login/UserLogin';
 import { MainLogin } from './components/AbanopAsaad/Login/MainLogin';
-import { UserAccountSettings } from './components/AbanopAsaad/Login/UserAccountSettings';
+// import { UserAccountSettings } from './components/AbanopAsaad/Login/UserAccountSettings';
 
 
 function App() {

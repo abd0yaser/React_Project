@@ -2,23 +2,22 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-
+import "./Products.css";
 export function Products() {
-  let [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  let getAllProduct = async () => {
+  const getAllProduct = async () => {
     try {
-      let response = await axios.get("http://localhost:3005/products");
+      const response = await axios.get("http://localhost:3005/products");
       setProducts(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
-  let deleteProduct = async (productId) => {
+  const deleteProduct = async (productId) => {
     try {
       await axios.delete(`http://localhost:3005/products/${productId}`);
-
       setProducts(products.filter((product) => product.id !== productId));
     } catch (error) {
       console.log(error);
@@ -37,43 +36,42 @@ export function Products() {
         <NavLink to="/products/0/add" className="btn btn-outline-primary mb-5">
           Add New Product
         </NavLink>
+
         <Table className="text-light" bordered>
           <thead>
             <tr>
               <th>Id</th>
               <th>Product Name</th>
               <th>Price</th>
-              <th>Quanitity</th>
+              <th>Quantity</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => {
-              return (
-                <tr key={product.id}>
-                  <td>{product.id}</td>
-                  <td>{product.productName}</td>
-                  <td>{product.price}</td>
-                  <td>{product.quantity}</td>
-                  <td>
-                    <NavLink to={`/products/${product.id}/edit`}>
-                      <i className="fs-2 text-info mx-1 bi bi-pencil-square"></i>
-                    </NavLink>
+            {products.map((product) => (
+              <tr key={product.id}>
+                <td>{product.id}</td>
+                <td>{product.productName}</td>
+                <td>${product.price}</td>
+                <td>{product.quantity}</td>
+                <td>
+                  <NavLink to={`/products/${product.id}/edit`}>
+                    <i className="fs-2 text-info mx-1 bi bi-pencil-square"></i>
+                  </NavLink>
 
-                    <NavLink to={`/products`}>
-                      <i
-                        className="fs-2 text-danger mx-1 bi bi-trash3-fill"
-                        onClick={() => deleteProduct(product.id)}
-                      ></i>
-                    </NavLink>
+                  <NavLink to={`/products`}>
+                    <i
+                      className="fs-2 text-danger mx-1 bi bi-trash3-fill"
+                      onClick={() => deleteProduct(product.id)}
+                    ></i>
+                  </NavLink>
 
-                    <NavLink to={`/products/${product.id}`}>
-                      <i className="fs-2 text-warning mx-1 bi bi-eye-fill"></i>
-                    </NavLink>
-                  </td>
-                </tr>
-              );
-            })}
+                  <NavLink to={`/products/${product.id}`}>
+                    <i className="fs-2 text-warning mx-1 bi bi-eye-fill"></i>
+                  </NavLink>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </Table>
       </div>

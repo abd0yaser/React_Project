@@ -61,11 +61,14 @@ export function AdminLogin() {
         if (user) {
           console.log("login successfully");
           console.log(formValues);
-          // How to redirect to another page
-          // window.location.href = "http://localhost:3000/products";
 
           // set login status to true
+          localStorage.setItem("Admin_isLoggedIn", true);
           localStorage.setItem("UserLoginState", true);
+
+          localStorage.setItem("LoggedInUserAdmin", JSON.stringify(user));
+          // How to redirect to another page
+          // window.location.href = "http://localhost:3000/products";
           navigate("/products");
 
           setFormValues({

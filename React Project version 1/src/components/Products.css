@@ -1,0 +1,54 @@
+.bg-dark {
+  background-color: #212529;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #fff;
+}
+
+.btn-outline-primary {
+  color: #fff;
+  border-color: #007bff;
+}
+
+.text-light {
+  color: #fff;
+}
+
+.table {
+  color: #fff;
+  background-color: #343a40;
+}
+
+.table th,
+.table td {
+  border-color: #454d55;
+}
+
+.table th {
+  background-color: #495057;
+}
+
+.fs-2 {
+  font-size: 1.5rem;
+}
+
+.text-info {
+  color: #17a2b8;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-warning {
+  color: #ffc107;
+}
+.container {
+  height: 100%;
+}

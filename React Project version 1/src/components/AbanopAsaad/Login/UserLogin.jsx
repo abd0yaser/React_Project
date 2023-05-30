@@ -66,6 +66,8 @@ export function UserLogin() {
 
           // set login status to true
           localStorage.setItem("UserLoginState", true);
+          // Store the logged-in user object in localStorage
+          localStorage.setItem("LoggedInUser", JSON.stringify(user));
           // make the login at nav bar be profile
 
           navigate("/");

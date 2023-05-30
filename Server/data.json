@@ -52,12 +52,14 @@
   "users": [
     {
       "id": 1,
+      "username": "sasa",
       "name": "user1",
       "email": "user1@test.com",
       "password": "0000000"
     },
     {
       "id": 2,
+      "username": "asds",
       "name": "user2",
       "email": "user2@mail.com",
       "password": "0000000"
@@ -66,12 +68,14 @@
   "admin_users": [
     {
       "id": 1,
+      "username": "sasa",
       "name": "abanop asaad",
       "email": "abanop_asaad@yhaoo.com",
       "password": "0000000"
     },
     {
       "id": 2,
+      "username": "asds",
       "name": "shrif",
       "email": "shrif@yhaoo.com",
       "password": "0000000"

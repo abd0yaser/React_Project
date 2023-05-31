@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Products.css";
+import { useNavigate } from "react-router-dom";
 export function Products() {
+  let navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   const getAllProduct = async () => {
@@ -19,6 +21,7 @@ export function Products() {
     try {
       await axios.delete(`http://localhost:3005/products/${productId}`);
       setProducts(products.filter((product) => product.id !== productId));
+      navigate("/admin-dashboard");
     } catch (error) {
       console.log(error);
     }

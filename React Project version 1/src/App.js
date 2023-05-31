@@ -20,6 +20,7 @@ import { MyRegister } from "./components/MyRegister";
 import { AdminLogin } from './components/AbanopAsaad/Login/AdminLogin';
 import { UserLogin } from './components/AbanopAsaad/Login/UserLogin';
 import { MainLogin } from './components/AbanopAsaad/Login/MainLogin';
+import { AccountSettings } from "./components/AbanopAsaad/Login/AccountSettings.jsx";
 
 
 
@@ -39,6 +40,8 @@ function App() {
 				<Route path='register' element={<MyRegister />} />
 				<Route path='admin-login' element={<AdminLogin />} />
 				<Route path='user-login' element={<UserLogin />} />
+				<Route path='account-settings' element={<AccountSettings />} />
+				{/* <Route path='account-settings/:id/edit' element={<AccountSettings />} /> */}
 
 
 				<Route path='admin-dashboard' element={<Products />} />
@@ -54,7 +57,7 @@ function App() {
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 			{/* Hide footer if the page is Login or Register */}
-			{location.pathname !== "/login" && location.pathname !== "/user-login" && location.pathname !== "/admin-login" && location.pathname !== "/register" && <MyFooter />}
+			{location.pathname !== "/login" && location.pathname !== "/user-login" && location.pathname !== "/admin-login" && location.pathname !== "/register" && location.pathname !== "/admin-dashboard" && <MyFooter />}
 			{/* <MyFooter /> */}
 		</div>
 	);

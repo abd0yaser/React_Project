@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "productName": "Samsung",
-      "price": 200,
-      "quantity": 20
-    },
-    {
-      "id": 2,
-      "productName": "Iphone",
-      "price": 100,
-      "quantity": 10
-    },
-    {
       "productName": "MacBook",
       "price": "1000",
       "quantity": "10",
@@ -47,6 +35,18 @@
       "price": "12",
       "quantity": "1",
       "id": 11
+    },
+    {
+      "productName": "dqwd",
+      "price": "123123",
+      "quantity": "123123",
+      "id": 12
+    },
+    {
+      "productName": "123123",
+      "price": "123123123",
+      "quantity": "12323",
+      "id": 13
     }
   ],
   "users": [
@@ -65,11 +65,11 @@
       "password": "0000000"
     },
     {
-      "username": "ahmos",
-      "name": "ahmoss",
-      "email": "a7mos@yahoo.com",
-      "password": "a7mos@a7mos.a7mons.com",
-      "id": 3
+      "id": 3,
+      "username": "Hatem",
+      "name": "Hatem",
+      "email": "Hatem@yahoo.com",
+      "password": "HatemHatem"
     },
     {
       "username": "asdasd",
@@ -82,7 +82,7 @@
   "admin_users": [
     {
       "id": 1,
-      "username": "sasa",
+      "username": "asdasdasd",
       "name": "abanop asaad",
       "email": "abanop_asaad@yhaoo.com",
       "password": "0000000"

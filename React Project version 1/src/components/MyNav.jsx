@@ -60,6 +60,10 @@ export function MyNav() {
     navigate("/login");
   };
 
+  const navigate_to_Account_Settings = (params) => {
+    navigate("/account-settings");
+  };
+
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -80,7 +84,7 @@ export function MyNav() {
                 title={`Hello, ${loginUserName()}`}
                 id="profile-dropdown"
               >
-                <NavDropdown.Item href="#action2">
+                <NavDropdown.Item onClick={navigate_to_Account_Settings}>
                   Account Settings
                 </NavDropdown.Item>
 

@@ -136,41 +136,72 @@ export function UserLogin() {
         break;
     }
   };
+  let navigateToRegistration = () => {
+    navigate("/register");
+  };
 
   return (
     <div className="container mt-5">
-      <h1>Welcom to UserLogin</h1>
-      <Form onSubmit={loginHandler}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            name="email"
-            value={formValues.email} // Update value attribute
-            onChange={inputHandler}
-            onBlur={handleBlur}
-            required
-          />
-          <Form.Text className="text-danger">{errors.email}</Form.Text>
-        </Form.Group>
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-header">
+              <h1>User Login</h1>
+            </div>
+            <div className="card-body">
+              <Form onSubmit={loginHandler}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    value={formValues.email}
+                    onChange={inputHandler}
+                    onBlur={handleBlur}
+                    required
+                  />
+                  <Form.Text className="text-danger">{errors.email}</Form.Text>
+                </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            name="password"
-            value={formValues.password} // Update value attribute
-            onChange={inputHandler}
-            onBlur={handleBlur}
-            required
-          />
-          <Form.Text className="text-danger">{errors.password}</Form.Text>
-        </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="password"
+                    value={formValues.password}
+                    onChange={inputHandler}
+                    onBlur={handleBlur}
+                    required
+                  />
+                  <Form.Text className="text-danger">
+                    {errors.password}
+                  </Form.Text>
+                </Form.Group>
 
-        <Button variant="dark" type="submit">
-          Login
-        </Button>
-      </Form>
+                <Button
+                  // variant="dark"
+                  type="submit"
+                  className="btn btn-success"
+                >
+                  Login
+                </Button>
+
+                <div className="text-center mt-3">
+                  <hr className="w-90 mx-auto" />
+                  <h5 className="mb-0">New to SAY Store?</h5>
+                </div>
+
+                <button
+                  onClick={navigateToRegistration}
+                  className="m-3 btn btn-primary"
+                >
+                  Create your SAY account
+                </button>
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,13 @@
 
 import "./App.css";
 import { MyNav } from "./components/MyNav";
-import { Route, Routes } from "react-router-dom";
+
+// 
+import { Route, Routes, useLocation } from "react-router-dom";
+
+
+// 
+
 import { Home } from "./components/Home";
 import { Products } from "./components/Products";
 import { ProductDetails } from "./components/ProductDetails";
@@ -18,6 +24,8 @@ import { MainLogin } from './components/AbanopAsaad/Login/MainLogin';
 
 
 function App() {
+	const location = useLocation();
+
 	return (
 		<div className="total">
 			<MyNav />
@@ -45,7 +53,9 @@ function App() {
 
 				<Route path='*' element={<NotFound />} />
 			</Routes>
-			<MyFooter />
+			{/* Hide footer if the page is Login or Register */}
+			{location.pathname !== "/login" && location.pathname !== "/user-login" && location.pathname !== "/admin-login" && location.pathname !== "/register" && <MyFooter />}
+			{/* <MyFooter /> */}
 		</div>
 	);
 }

@@ -69,7 +69,7 @@ export function AdminLogin() {
           localStorage.setItem("LoggedInUserAdmin", JSON.stringify(user));
           // How to redirect to another page
           // window.location.href = "http://localhost:3000/products";
-          navigate("/products");
+          navigate("/admin-dashboard");
 
           setFormValues({
             email: "",

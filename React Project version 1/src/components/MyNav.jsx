@@ -73,7 +73,7 @@ export function MyNav() {
             <NavLink className="nav-link" to="/">
               Home
             </NavLink>
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link" to="/Item">
               Products
             </NavLink>
             <NavLink className="nav-link" to="/">

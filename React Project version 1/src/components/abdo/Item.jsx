@@ -3,8 +3,8 @@ import React from 'react'
 export  function Item() {
   return (
     <div>
-      <div className='bg-light  text-center'>   
-        <h2  className='myHead'> Our Product</h2>
+      <div className='bg-muted  text-center'>   
+        <h2  className='myHead text-dark' > Our Product</h2>
          <div className='container'> 
            <div className="row " >
 

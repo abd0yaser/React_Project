@@ -23,12 +23,12 @@ export function ProductForm() {
       axios
         .post("http://localhost:3005/products", formValues)
         .then((response) => {
-          navigate("/products");
+          navigate("/admin-dashboard");
         });
     } else {
       // edit
       axios.put(`http://localhost:3005/products/${id}`, formValues).then(() => {
-        navigate("/products");
+        navigate("/admin-dashboard");
       });
     }
   };

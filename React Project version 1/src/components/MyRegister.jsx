@@ -2,104 +2,104 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function MyRegister(){
-    const [username, setUserName] = useState("");
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [errors, setErrors] = useState({});
-    const [users, setUsers] = useState([]);
-    
-    const navigate = useNavigate();
-  
-    const getAllUsers = async () => {
-      try {
-        const response = await axios.get("http://localhost:3005/users");
-        setUsers(response.data);
-      } catch (error) {
-        console.log("Error fetching users:", error);
-      }
-    };
-  
-    useEffect(() => {
-      getAllUsers();
-    }, []);
-  
+export function MyRegister() {
+  const [username, setUserName] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState({});
+  const [users, setUsers] = useState([]);
 
-    const validateForm = () => {
-        let isValid = true;
-        let newErrors = {};
-    
-        if (!username) {
-          isValid = false;
-          newErrors.username = "Please enter a Username";
-        } else if (username.length < 3) {
-          isValid = false;
-          newErrors.username = "Username should be at least 3 characters long";
-        } else if (!/^[a-zA-Z]+$/.test(username)) {
-          isValid = false;
-          newErrors.username = "Username should contain only letters";
-        }
-    
-        if (!name) {
-          isValid = false;
-          newErrors.name = "Please enter a Fullname";
-        } else if (name.length < 6) {
-          isValid = false;
-          newErrors.name = "Fullname should be at least 6 characters long";
-        } else if (!/^[a-zA-Z]+$/.test(name)) {
-          isValid = false;
-          newErrors.name = "Fullname should contain only letters";
-        }
-    
-        if (!password) {
-          isValid = false;
-          newErrors.password = "Please enter a Password";
-        }
-    
-        if (password !== confirmPassword) {
-          isValid = false;
-          newErrors.confirmPassword = "Passwords do not match";
-        }
-    
-        if (!email) {
-          isValid = false;
-          newErrors.email = "Please enter an Email";
-        } else if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
-          isValid = false;
-          newErrors.email = "Please enter a valid Email";
-        } else if (isEmailAlreadyExists(email)) {
-          isValid = false;
-          newErrors.email = "Email already exists";
-        }
-    
-        setErrors(newErrors);
-    
-        return isValid;
-      };
-    
-      const isEmailAlreadyExists = (email) => {
-        const normalizedEmail = email.toLowerCase();
-        return users.some((user) => user.email.toLowerCase() === normalizedEmail);
-      };
+  const navigate = useNavigate();
 
-      const handleSubmit = (e) => {
-        e.preventDefault();
-      
-        if (validateForm()) {
-          const myReg = { username, name, email, password };
-      
-          axios.post("http://localhost:3005/users", myReg)
-            .then((res) => {
-              alert("Registered successfully.");
-              navigate("/products");
-            })
-            .catch((err) => {
-              alert("Failed: " + err.message);
-            });
-        }
-      };
+  const getAllUsers = async () => {
+    try {
+      const response = await axios.get("http://localhost:3005/users");
+      setUsers(response.data);
+    } catch (error) {
+      console.log("Error fetching users:", error);
+    }
+  };
+
+  useEffect(() => {
+    getAllUsers();
+  }, []);
+
+  const validateForm = () => {
+    let isValid = true;
+    let newErrors = {};
+
+    if (!username) {
+      isValid = false;
+      newErrors.username = "Please enter a Username";
+    } else if (username.length < 3) {
+      isValid = false;
+      newErrors.username = "Username should be at least 3 characters long";
+    } else if (!/^[a-zA-Z]+$/.test(username)) {
+      isValid = false;
+      newErrors.username = "Username should contain only letters";
+    }
+
+    if (!name) {
+      isValid = false;
+      newErrors.name = "Please enter a Fullname";
+    } else if (name.length < 6) {
+      isValid = false;
+      newErrors.name = "Fullname should be at least 6 characters long";
+    } else if (!/^[a-zA-Z]+$/.test(name)) {
+      isValid = false;
+      newErrors.name = "Fullname should contain only letters";
+    }
+
+    if (!password) {
+      isValid = false;
+      newErrors.password = "Please enter a Password";
+    }
+
+    if (password !== confirmPassword) {
+      isValid = false;
+      newErrors.confirmPassword = "Passwords do not match";
+    }
+
+    if (!email) {
+      isValid = false;
+      newErrors.email = "Please enter an Email";
+    } else if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+      isValid = false;
+      newErrors.email = "Please enter a valid Email";
+    } else if (isEmailAlreadyExists(email)) {
+      isValid = false;
+      newErrors.email = "Email already exists";
+    }
+
+    setErrors(newErrors);
+
+    return isValid;
+  };
+
+  const isEmailAlreadyExists = (email) => {
+    const normalizedEmail = email.toLowerCase();
+    return users.some((user) => user.email.toLowerCase() === normalizedEmail);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      const myReg = { username, name, email, password };
+
+      axios
+        .post("http://localhost:3005/users", myReg)
+        .then((res) => {
+          alert("Registered successfully.");
+          navigate("/login");
+        })
+        .catch((err) => {
+          alert("Failed: " + err.message);
+        });
+    }
+  };
 
   return (
     <div>
@@ -168,9 +168,7 @@ export function MyRegister(){
                       }`}
                     />
                     {errors.password && (
-                      <div className="invalid-feedback">
-                        {errors.password}
-                      </div>
+                      <div className="invalid-feedback">{errors.password}</div>
                     )}
                   </div>
                 </div>
@@ -204,5 +202,4 @@ export function MyRegister(){
       </div>
     </div>
   );
-};
-
+}

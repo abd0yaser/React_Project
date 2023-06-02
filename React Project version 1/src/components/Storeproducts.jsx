@@ -24,7 +24,7 @@ export function Storeproducts() {
   return (
     <div className="container w-100">
       <h1>Products</h1>
-      <div className="row w-100">
+      <div className="row">
         {products.map((product) => (
           <Card style={{ width: "18rem" }} key={product.id}>
             <Card.Img

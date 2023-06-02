@@ -22,26 +22,28 @@ export function Storeproducts() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container w-100">
       <h1>Products</h1>
-      <div className="row">
-        {products.map((product) => (
-          <Card style={{ width: "18rem" }} key={product.id}>
-            <Card.Img
-              variant="top"
-              className="w-100"
-              style={{ height: "300px", objectFit: "contain" }}
-              src={product.image}
-              alt={product.productName}
-            />
-            <Card.Body>
-              <Card.Text>Name: {product.productName}</Card.Text>
-              <Card.Text>Price: {product.price}</Card.Text>
-              <Card.Text>Quantity: {product.quantity}</Card.Text>
-              <Button variant="primary">Add to Cart</Button>
-            </Card.Body>
-          </Card>
-        ))}
+      <div className="row w-100">
+        <div className="col-lg-12">
+          {products.map((product) => (
+            <Card style={{ width: "18rem" }} key={product.id}>
+              <Card.Img
+                variant="top"
+                className="w-100"
+                style={{ height: "300px", objectFit: "contain" }}
+                src={product.image}
+                alt={product.productName}
+              />
+              <Card.Body>
+                <Card.Text>Name: {product.productName}</Card.Text>
+                <Card.Text>Price: {product.price}</Card.Text>
+                <Card.Text>Quantity: {product.quantity}</Card.Text>
+                <Button variant="primary">Add to Cart</Button>
+              </Card.Body>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );

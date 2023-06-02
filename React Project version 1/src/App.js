@@ -26,6 +26,10 @@ import { UserLogin } from './components/AbanopAsaad/Login/UserLogin';
 import { MainLogin } from './components/AbanopAsaad/Login/MainLogin';
 import { AccountSettings } from "./components/AbanopAsaad/Login/AccountSettings.jsx";
 
+// abdo
+import { Item } from "./components/abdo/Item.jsx";
+
+
 
 
 function App() {
@@ -58,6 +62,8 @@ function App() {
 				{/* id >> Edit */}
 				<Route path='products/:id/add' element={<ProductForm />} />
 				<Route path='products/:id/edit' element={<ProductForm />} />
+				<Route path='Item' element={<Item />} />
+
 
 
 

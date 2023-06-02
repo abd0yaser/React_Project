@@ -37,7 +37,7 @@ function App() {
 
 
 				<Route path='login' element={<MainLogin />} />
-				<Route path='register' element={<MyRegister />} />
+				{/* <Route path='register' element={<MyRegister />} /> */}
 				<Route path='admin-login' element={<AdminLogin />} />
 				<Route path='user-login' element={<UserLogin />} />
 

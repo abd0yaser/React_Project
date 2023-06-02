@@ -9,9 +9,13 @@ import { Route, Routes, useLocation } from "react-router-dom";
 // 
 
 import { Home } from "./components/Home";
+// Admin Dashboard
 import { Products } from "./components/Products";
 import { ProductDetails } from "./components/ProductDetails";
 import { ProductForm } from "./components/ProductForm";
+// Admin Dashboard
+import { Storeproducts } from "./components/Storeproducts";
+
 import { NotFound } from "./components/NotFound";
 import { MyFooter } from "./components/MyFooter";
 import { MyRegister } from "./components/MyRegister";
@@ -54,6 +58,10 @@ function App() {
 				{/* id >> Edit */}
 				<Route path='products/:id/add' element={<ProductForm />} />
 				<Route path='products/:id/edit' element={<ProductForm />} />
+
+
+
+				<Route path='store-products' element={<Storeproducts />} />
 
 				<Route path='*' element={<NotFound />} />
 			</Routes>

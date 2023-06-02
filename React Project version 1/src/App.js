@@ -52,7 +52,7 @@ function App() {
 				{/* id >> Edit */}
 				<Route path='products/:id/add' element={<ProductForm />} />
 				<Route path='products/:id/edit' element={<ProductForm />} />
-				<Route path='Item' element={<Item />} />
+				{/* <Route path='Item' element={<Item />} /> */}
 
 
 
@@ -62,7 +62,7 @@ function App() {
 				<Route path='*' element={<NotFound />} />
 			</Routes>
 			{/* Hide footer if the page is Login or Register */}
-			{location.pathname !== "/login" && location.pathname !== "/user-login" && location.pathname !== "/admin-login" && location.pathname !== "/register" && location.pathname !== "/admin-dashboard" && <MyFooter />}
+			{/* {location.pathname !== "/login" && location.pathname !== "/user-login" && location.pathname !== "/admin-login" && location.pathname !== "/register" && location.pathname !== "/admin-dashboard" && <MyFooter />} */}
 			{/* <MyFooter /> */}
 		</div>
 	);

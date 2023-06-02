@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/8.jpg"
+    },
+    {
+        "id": 9,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/9.jpg"
+    },
+    {
+        "id": 10,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/10.jpg"
+    },
+    {
+        "id": 11,
+        "name": "t-shirt",
+        "price":20,
+        "imgUrl":"/React Project version 1/public/imgs/11.jpg"
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]

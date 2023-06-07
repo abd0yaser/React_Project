@@ -103,7 +103,7 @@ export function MyRegister() {
 
   return (
     <div>
-      <div className="offset-lg-3 col-lg-6 my-5">
+      <div className="offset-lg-4 col-md-12 col-lg-6 my-5">
         <form className="container w-75" onSubmit={handleSubmit}>
           <div className="card">
             <div className="card-header">
@@ -111,7 +111,7 @@ export function MyRegister() {
             </div>
             <div className="card-body">
               <div className="row">
-                <div className="col-lg-12">
+                <div className="col-lg-12 ">
                   <div className="form-group">
                     <label>Full Name</label>
                     <input

@@ -24,6 +24,10 @@ import { UserLogin } from './components/AbanopAsaad/Login/UserLogin';
 import { MainLogin } from './components/AbanopAsaad/Login/MainLogin';
 import { AccountSettings } from "./components/AbanopAsaad/Login/AccountSettings.jsx";
 
+// ABDO ITEMS
+import About from "./components/About";
+import Store from "./components/Store";
+import ShoppingCartProvider from "./context/ShoppingCartContext";
 
 
 function App() {
@@ -31,10 +35,13 @@ function App() {
 
 	return (
 		<div className="total">
+			<ShoppingCartProvider>
 			<MyNav />
 			<Routes>
 				<Route path='' element={<Home />} />
 				<Route path='home' element={<Home />} />
+				<Route path="about" element={<About />} />
+				<Route path="/store" element={<Store />} />
 
 
 
@@ -62,6 +69,7 @@ function App() {
 			{/* Hide footer if the page is Login or Register */}
 			{location.pathname !== "/login" && location.pathname !== "/user-login" && location.pathname !== "/admin-login" && location.pathname !== "/register" && location.pathname !== "/admin-dashboard" && <MyFooter />}
 			{/* <MyFooter /> */}
+			</ShoppingCartProvider>
 		</div>
 	);
 }

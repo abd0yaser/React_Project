@@ -138,9 +138,10 @@ export function AdminLogin() {
   };
 
   return (
-    <div className="container mt-5">
-      <h1>Welcom to AdminLogin</h1>
-      <Form onSubmit={loginHandler}>
+    <div className="offset-lg-4 col-md-12 col-lg-6 my-5">
+      <Form className="container w-75" onSubmit={loginHandler}>
+      <div className="card">
+      <h1>Welcom Back!</h1>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -170,6 +171,7 @@ export function AdminLogin() {
         <Button variant="dark" type="submit">
           Login
         </Button>
+        </div>
       </Form>
     </div>
   );

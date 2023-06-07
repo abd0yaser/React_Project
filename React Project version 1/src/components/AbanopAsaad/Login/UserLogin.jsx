@@ -136,69 +136,65 @@ export function UserLogin() {
         break;
     }
   };
+  // If he does no have an account return to registration page
   let navigateToRegistration = () => {
     navigate("/register");
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-header">
-              <h1>User Login</h1>
-            </div>
-            <div className="card-body">
-              <Form onSubmit={loginHandler}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    value={formValues.email}
-                    onChange={inputHandler}
-                    onBlur={handleBlur}
-                    required
-                  />
-                  <Form.Text className="text-danger">{errors.email}</Form.Text>
-                </Form.Group>
+    <div className="offset-lg-4 col-md-12 col-lg-6 my-5">
+      <div className="container w-75">
+        <div className="card">
+          <div className="card-header">
+            <h1>User Login</h1>
+          </div>
+          <div className="card-body">
+            <Form onSubmit={loginHandler}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  value={formValues.email}
+                  onChange={inputHandler}
+                  onBlur={handleBlur}
+                  required
+                />
+                <Form.Text className="text-danger">{errors.email}</Form.Text>
+              </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="password"
-                    value={formValues.password}
-                    onChange={inputHandler}
-                    onBlur={handleBlur}
-                    required
-                  />
-                  <Form.Text className="text-danger">
-                    {errors.password}
-                  </Form.Text>
-                </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  value={formValues.password}
+                  onChange={inputHandler}
+                  onBlur={handleBlur}
+                  required
+                />
+                <Form.Text className="text-danger">{errors.password}</Form.Text>
+              </Form.Group>
 
-                <Button
-                  // variant="dark"
-                  type="submit"
-                  className="btn btn-success"
-                >
-                  Login
-                </Button>
+              <Button
+                // variant="dark"
+                type="submit"
+                className="btn btn-success"
+              >
+                Login
+              </Button>
 
-                <div className="text-center mt-3">
-                  <hr className="w-90 mx-auto" />
-                  <h5 className="mb-0">New to SAY Store?</h5>
-                </div>
-
-                <button
-                  onClick={navigateToRegistration}
-                  className="m-3 btn btn-primary"
-                >
-                  Create your SAY account
-                </button>
-              </Form>
-            </div>
+              <div className="text-center mt-3">
+                <hr className="w-90 mx-auto" />
+                <h5 className="mb-0">New to SAY Store?</h5>
+              </div>
+              <button
+                onClick={navigateToRegistration}
+                className="m-3 btn btn-primary"
+              >
+                Create your SAY account
+              </button>
+            </Form>
           </div>
         </div>
       </div>

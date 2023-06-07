@@ -54,9 +54,9 @@ export function Products() {
             {products.map((product) => (
               <tr key={product.id}>
                 <td>{product.id}</td>
-                <td>{product.productName}</td>
+                <td>{product.name}</td>
                 <td>${product.price}</td>
-                <td>{product.quantity}</td>
+                <td>{product.count}</td>
                 <td>
                   <NavLink to={`/products/${product.id}/edit`}>
                     <i className="fs-2 text-info mx-1 bi bi-pencil-square"></i>

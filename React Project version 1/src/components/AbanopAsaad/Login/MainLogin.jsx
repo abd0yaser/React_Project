@@ -21,7 +21,7 @@ export function MainLogin() {
     <section className="cards" id="Technologies">
       <h2 className="title">Which user you are</h2>
       <div className="content">
-        {/* Admin */}
+        {/* User */}
         <div className="card" onClick={handleUserCardClick}>
           <div className="icon">
             <i className="bi bi-box-arrow-in-left"></i>
@@ -30,7 +30,7 @@ export function MainLogin() {
             <h3>USER</h3>
           </div>
         </div>
-        {/* User */}
+        {/* Admin */}
         <div className="card" onClick={handleAdminCardClick}>
           <div className="icon">
             <i className="bi bi-box-arrow-in-right"></i>

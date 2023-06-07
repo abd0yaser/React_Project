@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+
 export function AccountSettings() {
   let navigate = useNavigate();
   let [id, setId] = useState("");
@@ -8,9 +10,9 @@ export function AccountSettings() {
   let [name, setName] = useState("");
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
-  //   let update = -1;
 
   useEffect(() => {
+    // Fetch user data from localStorage
     const loggedInUser = localStorage.getItem("LoggedInUser");
     const loggedInUserAdmin = localStorage.getItem("LoggedInUserAdmin");
 
@@ -18,10 +20,8 @@ export function AccountSettings() {
 
     if (loggedInUser) {
       parsedLoggedInUser = JSON.parse(loggedInUser);
-      //   update = 1;
     } else if (loggedInUserAdmin) {
       parsedLoggedInUser = JSON.parse(loggedInUserAdmin);
-      //   update = 2;
     }
 
     if (parsedLoggedInUser) {
@@ -34,8 +34,6 @@ export function AccountSettings() {
   }, []);
 
   const updateUser = (e) => {
-    const loggedInUser = localStorage.getItem("LoggedInUser");
-    const loggedInUserAdmin = localStorage.getItem("LoggedInUserAdmin");
     e.preventDefault();
     const updatedUser = {
       id: id,
@@ -45,17 +43,14 @@ export function AccountSettings() {
       password: password,
     };
 
-    if (loggedInUserAdmin) {
-      //   let parsedLoggedInUser = JSON.parse(loggedInUserAdmin);
-      //   console.log(JSON.stringify(parsedLoggedInUser));
-      //   set localstorage to the new data
+    const loggedInUser = localStorage.getItem("LoggedInUser");
+    const loggedInUserAdmin = localStorage.getItem("LoggedInUserAdmin");
 
+    if (loggedInUserAdmin) {
       axios
         .put(`http://localhost:3005/admin_users/${id}`, updatedUser)
         .then((response) => {
-          // Handle successful update
           console.log("User updated successfully:", response.data);
-
           localStorage.setItem(
             "LoggedInUserAdmin",
             JSON.stringify(response.data)
@@ -63,80 +58,68 @@ export function AccountSettings() {
           navigate("/home");
         })
         .catch((error) => {
-          // Handle error
           console.error("Error updating user:", error);
         });
     }
+
     if (loggedInUser) {
       axios
         .put(`http://localhost:3005/users/${id}`, updatedUser)
         .then((response) => {
-          // Handle successful update
           console.log("User updated successfully:", response.data);
           localStorage.setItem("LoggedInUser", JSON.stringify(response.data));
           navigate("/home");
         })
         .catch((error) => {
-          // Handle error
           console.error("Error updating user:", error);
         });
     }
-
-    // if (update === 1) {
-    //   axios
-    //     .put(`http://localhost:3005/users/${id}`, updatedUser)
-    //     .then((response) => {
-    //       // Handle successful update
-    //       console.log("User updated successfully:", response.data);
-    //     })
-    //     .catch((error) => {
-    //       // Handle error
-    //       console.error("Error updating user:", error);
-    //     });
-    // } else if (update === 2) {
-    // }
   };
 
-  //   console.log(id);
-
   return (
-    <div>
-      <h1>Account Settings</h1>
-      <form onSubmit={updateUser}>
-        <div>
-          <label>Username</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Save Changes</button>
-      </form>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>Account Settings</h1>
+          <Form onSubmit={updateUser}>
+            <Form.Group controlId="username">
+              <Form.Label>Username</Form.Label>
+              <Form.Control
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Save Changes
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 }

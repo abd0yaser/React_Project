@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-
 import { Button, Form } from "react-bootstrap";
-
 import { useNavigate, useParams } from "react-router-dom";
 
 export function ProductForm() {
@@ -11,9 +9,9 @@ export function ProductForm() {
 
   let [product, setProduct] = useState({});
   let [formValues, setFormValues] = useState({
-    productName: "",
+    name: "",
     price: "",
-    quantity: "",
+    count: "",
   });
 
   let formOperation = (e) => {
@@ -45,11 +43,13 @@ export function ProductForm() {
     setProduct(response.data);
     setFormValues(response.data);
   };
+
   useEffect(() => {
     if (id != 0) {
       getProduct();
     }
   }, []);
+
   return (
     <div className="container mt-5 alert alert-secondary p-5">
       <Form onSubmit={formOperation}>
@@ -57,31 +57,71 @@ export function ProductForm() {
           <Form.Label>Product Name</Form.Label>
           <Form.Control
             onChange={OperationHandler}
-            name="productName"
+            name="name"
             type="text"
             placeholder="Enter Product Name"
-            defaultValue={product.productName}
+            defaultValue={product.name}
+            required
           />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="">
           <Form.Label>Price</Form.Label>
           <Form.Control
             onChange={OperationHandler}
             name="price"
-            type="number"
+            type="text" // Change the type to "text" for decimal values
             placeholder="Enter Product Price"
             defaultValue={product.price}
+            required
           />
         </Form.Group>
+
+        <Form.Group className="mb-3" controlId="">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            onChange={OperationHandler}
+            name="description"
+            type="text"
+            placeholder="Enter Product Description"
+            defaultValue={product.description}
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="">
+          <Form.Label>Category</Form.Label>
+          <Form.Control
+            onChange={OperationHandler}
+            name="category"
+            type="text"
+            placeholder="Enter Product Category"
+            defaultValue={product.category}
+            required
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="">
+          <Form.Label>Image URL</Form.Label>
+          <Form.Control
+            onChange={OperationHandler}
+            name="imgUrl"
+            type="text"
+            placeholder="Enter Product Image URL"
+            defaultValue={product.imgUrl}
+            required
+          />
+        </Form.Group>
+
         <Form.Group className="mb-3" controlId="quantity">
           <Form.Label>Quantity</Form.Label>
           <Form.Control
             onChange={OperationHandler}
-            name="quantity"
+            name="count"
             type="number"
             placeholder="Enter Product Quantity"
-            defaultValue={product.quantity}
+            defaultValue={product.count}
+            required
           />
         </Form.Group>
 

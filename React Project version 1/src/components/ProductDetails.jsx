@@ -16,19 +16,19 @@ export function ProductDetails() {
 		getProductData();
 	}, []);
 
-	let goToProsucts = () => {
-		navigate("/products");
+	let goToProducts = () => {
+		navigate("/store");
 	};
 	return (
 		<div className='bg-light p-5 text-center'>
-			<h2 className=''>Product Details of ID : {id}</h2>
+			<h2 className='text-dark'>Product Details of ID : {id}</h2>
 			<p className='lead fs-2 mt-3 text-info'>
-				Product Name : {product.productName}
+				Product Name : {product.name}
 			</p>
 			<p className='lead fs-2 mt-3 text-dark'>
 				Product Price : {product.price} $
 			</p>
-			<button onClick={goToProsucts} className='btn btn-dark'>
+			<button onClick={goToProducts} className='btn btn-dark'>
 				Back To Products
 			</button>
 		</div>
